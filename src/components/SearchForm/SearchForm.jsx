@@ -10,7 +10,7 @@ const SearchForm = () => {
         <div className='search-form-content'>
           <form className='search-form'>
             <div className='search-form-elem flex flex-sb bg-white'>
-              <input type="text" className='form-control' placeHolder='The Lost Art ...' />
+              <input type="text" className='form-control' placeholder='The Lost Art ...' />
               <button type='submit' className='flex flex-c'>
                 <FaSearch className='text-purple' size={32} />
               </button>
