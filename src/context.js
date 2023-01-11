@@ -1,23 +1,22 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, {useState, useContext, useEffect} from 'react';
 import { useCallback } from 'react';
-
-const URL = 'http://openlibrary.org/search.json?title=';
+const URL = "http://openlibrary.org/search.json?title=";
 const AppContext = React.createContext();
 
 const AppProvider = ({children}) => {
-    const [searchTerm, setSearchTerm] = useState('The Lost Art ...');
+    const [searchTerm, setSearchTerm] = useState("the lost world");
     const [books, setBooks] = useState([]);
     const [loading, setLoading] = useState(true);
     const [resultTitle, setResultTitle] = useState("");
 
     const fetchBooks = useCallback(async() => {
         setLoading(true);
-        try {
+        try{
             const response = await fetch(`${URL}${searchTerm}`);
             const data = await response.json();
             const {docs} = data;
 
-            if(docs) {
+            if(docs){
                 const newBooks = docs.slice(0, 20).map((bookSingle) => {
                     const {key, author_name, cover_i, edition_count, first_publish_year, title} = bookSingle;
 
@@ -33,17 +32,17 @@ const AppProvider = ({children}) => {
 
                 setBooks(newBooks);
 
-                if(newBooks.length > 1) {
-                    setResultTitle("Your Search Results");
+                if(newBooks.length > 1){
+                    setResultTitle("Your Search Result");
                 } else {
-                    setResultTitle("No Search Results Found")
+                    setResultTitle("No Search Result Found!")
                 }
             } else {
                 setBooks([]);
-                setResultTitle("No Search Results Found!");
+                setResultTitle("No Search Result Found!");
             }
             setLoading(false);
-        } catch(error) {
+        } catch(error){
             console.log(error);
             setLoading(false);
         }
@@ -54,7 +53,7 @@ const AppProvider = ({children}) => {
     }, [searchTerm, fetchBooks]);
 
     return (
-        <AppContext.Provider value= {{
+        <AppContext.Provider value = {{
             loading, books, setSearchTerm, resultTitle, setResultTitle,
         }}>
             {children}

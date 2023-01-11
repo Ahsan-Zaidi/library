@@ -1,9 +1,9 @@
-import React from 'react'
-import { useGlobalContext } from '../../context'
-import Book from '../BookList/Book';
-import Loading from '../Loader/Loader';
-import coverImg from '../../images/cover_not_found.jpg';
-import './BookList.css';
+import React from 'react';
+import { useGlobalContext } from '../../context';
+import Book from "../BookList/Book";
+import Loading from "../Loader/Loader";
+import coverImg from "../../images/cover_not_found.jpg";
+import "./BookList.css";
 
 //https://covers.openlibrary.org/b/id/240727-S.jpg
 
@@ -12,7 +12,7 @@ const BookList = () => {
   const booksWithCovers = books.map((singleBook) => {
     return {
       ...singleBook,
-      //removing /works/ addition from api to get only id
+      // removing /works/ to get only id
       id: (singleBook.id).replace("/works/", ""),
       cover_img: singleBook.cover_id ? `https://covers.openlibrary.org/b/id/${singleBook.cover_id}-L.jpg` : coverImg
     }
@@ -40,4 +40,4 @@ const BookList = () => {
   )
 }
 
-export default BookList
+export default BookList;
