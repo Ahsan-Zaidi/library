@@ -17,12 +17,12 @@
 
 🔍Being a web developer means being part of a community. You’ll need a place to share your projects not only if you're applying for jobs or working as a freelancer but also so that you can share your work with fellow developers and collaborate on future projects.
 
-I have created a Library application that pulls information about your favorite books using a server side API. The purpose of this app is to act as a search engine for any individual looking for thier next book to read.
+I've created a Library app that utilizes a server-side API to gather information about your favorite books. The main purpose of this application is to function as a helpful tool for individuals seeking their next enjoyable read.
 
 ✋ [GitHub Repository] https://github.com/Ahsan-Zaidi/library
 
 
-✋ [Deployed App] 
+✋ [Deployed App] https://ahsan-zaidi.github.io/library/
 
 
 ## ✋User Story
