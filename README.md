@@ -1,6 +1,6 @@
 # Library-App
 
-<h1 align="center"> Library 👋</h1>
+<h1 align="center"> Bookspot 👋</h1>
   
 <p align="center">
     <img src="https://img.shields.io/badge/Javascript-yellow" />
